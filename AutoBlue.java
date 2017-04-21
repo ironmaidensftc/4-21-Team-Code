@@ -85,33 +85,9 @@ public class AutoBlue extends LinearOpMode {
         touchMount.setPosition(0.3);
         rLinservo.setPosition(0.3);
         lLinservo.setPosition(0.3);
+        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //new comment
         // Wait for the game to start (driver presses PLAY)
         waitForStart();
 
