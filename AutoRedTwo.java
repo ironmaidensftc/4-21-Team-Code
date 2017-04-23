@@ -115,10 +115,13 @@ public class AutoRedTwo extends LinearOpMode {
         sleep(250);
 
         angles = imu.getAngularOrientation();
-        robot.turnNeg(imu, angles, 0, 327, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.5, 0.5);
+        robot.turnNeg(imu, angles, 0, 327, leftFrontMotor,
+                leftRearMotor, rightFrontMotor, rightRearMotor,
+                -0.5, 0.5);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         leftFrontMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         //tell the wheels to run based off the encoders
@@ -161,16 +164,21 @@ public class AutoRedTwo extends LinearOpMode {
 
         sleep(100);
 
-        robot.color(colorCcache, rLinservo, lLinservo, colorCreader, "red");
+        robot.color(colorCcache, rLinservo,
+                lLinservo, colorCreader, "red");
 
         sleep(500);
 
-        //Drive forward louss
+        //Drive forward less
         x = leftFrontMotor.getCurrentPosition() - 2250;
-        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.2, -0.2, x);
+        robot.backwards(leftFrontMotor,
+                leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor,
+                -0.2, -0.2, x);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         sleep(750);
 
@@ -178,18 +186,23 @@ public class AutoRedTwo extends LinearOpMode {
         angles = imu.getAngularOrientation();
         double y = (Math.abs(angles.firstAngle)) + 68;
 
-        robot.turn(imu, angles, y, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, 0.55, -0.35, robot);
+        robot.turn(imu, angles, y, leftFrontMotor,
+                leftRearMotor, rightFrontMotor,
+                rightRearMotor, 0.55, -0.35, robot);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         sleep(500);
 
         //Drive forward
-        robot.odsRun(lods, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, 0.5, 0.5, 0.05);
+        robot.odsRun(lods, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, 0.5, 0.5, 0.05);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         sleep(750);
 
@@ -204,14 +217,17 @@ public class AutoRedTwo extends LinearOpMode {
         //Turn for 45 degrees
         angles = imu.getAngularOrientation();
         y = (Math.abs(angles.firstAngle)) - 66;
-        robot.turn(imu, angles, y, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.6, 0.6, robot);
+        robot.turn(imu, angles, y, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, -0.6, 0.6, robot);
 
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor,
+                rightRearMotor);
 
         sleep(100);
 
         //Drive forward
-        robot.drive(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, 0.1, 0.1);
+        robot.drive(leftFrontMotor, leftRearMotor, rightFrontMotor,
+                rightRearMotor, 0.1, 0.1);
 
         //going forward a little bit
         while (opModeIsActive() && (!touch.isPressed())) {
@@ -219,7 +235,8 @@ public class AutoRedTwo extends LinearOpMode {
         }
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor,
+                rightRearMotor);
 
         touchMount.setPosition(0.3);
 
@@ -231,7 +248,8 @@ public class AutoRedTwo extends LinearOpMode {
 
         x = leftFrontMotor.getCurrentPosition() - 110;
 
-        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.5, -0.5, x);
+        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, -0.5, -0.5, x);
 
         // Set all motors to zero power
         robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);

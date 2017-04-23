@@ -125,10 +125,12 @@ public class AutoRed extends LinearOpMode {
 
         sleep(500);
 
-        robot.odsRun(lods, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, 0.6, -0.6, 0.05);
+        robot.odsRun(lods, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, 0.6, -0.6, 0.05);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor,
+                rightRearMotor);
 
         sleep(250);
 

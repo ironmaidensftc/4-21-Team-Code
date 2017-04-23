@@ -176,7 +176,8 @@ public class AutoBlueTwo extends LinearOpMode {
         angles = imu.getAngularOrientation();
         double y = Math.abs(angles.firstAngle) - 76;
 
-        robot.turn(imu, angles, y, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.4, 0.4, robot);
+        robot.turn(imu, angles, y, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, -0.4, 0.4, robot);
 
         // Set all motors to zero power
         robot.allStop(leftFrontMotor, leftRearMotor,
@@ -231,9 +232,11 @@ public class AutoBlueTwo extends LinearOpMode {
         sleep(500);
 
         x = leftFrontMotor.getCurrentPosition() - 110;
-        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.5, -0.5, x);
+        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor, -0.5, -0.5, x);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor,
+                rightRearMotor);
     }
 }

@@ -72,12 +72,20 @@ public class AutoBlue extends LinearOpMode {
         rightFrontMotor.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
         rightRearMotor.setDirection(DcMotor.Direction.REVERSE);// Set to FORWARD if using AndyMark motors
 
-        leftFrontMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        idle();
-
         leftFrontMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        leftRearMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rightFrontMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        rightRearMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         //tell the wheels to run based off the encoders
         idle();
+
+        leftFrontMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        leftRearMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightFrontMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        rightRearMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        idle();
+
+
 
         // Set all motors to zero power
         robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
@@ -85,7 +93,7 @@ public class AutoBlue extends LinearOpMode {
         touchMount.setPosition(0.3);
         rLinservo.setPosition(0.3);
         lLinservo.setPosition(0.3);
-        
+
 
 
         // Wait for the game to start (driver presses PLAY)
@@ -119,16 +127,20 @@ public class AutoBlue extends LinearOpMode {
         robot.odsRun(rods,leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, 0.4, 0.4,  0.1);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         sleep(250);
 
         int x = leftFrontMotor.getCurrentPosition() - 150;
 
-        robot.backwards(leftFrontMotor, leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor, -0.4, -0.4, x);
+        robot.backwards(leftFrontMotor, leftFrontMotor,
+                leftRearMotor, rightFrontMotor, rightRearMotor,
+                -0.4, -0.4, x);
 
         // Set all motors to zero power
-        robot.allStop(leftFrontMotor, leftRearMotor, rightFrontMotor, rightRearMotor);
+        robot.allStop(leftFrontMotor, leftRearMotor,
+                rightFrontMotor, rightRearMotor);
 
         sleep(750);
 

@@ -94,7 +94,8 @@ public class container extends LinearOpMode {
         rR.setPower(0);
     }
 
-    public void color(byte[] array, Servo r, Servo l, I2cDeviceSynch read, String color){
+    public void color(byte[] array, Servo r, Servo l,
+                      I2cDeviceSynch read, String color){
         array = read.read(0x04, 1);
 
         if(color.startsWith("r")){
